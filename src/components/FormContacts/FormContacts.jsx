@@ -1,27 +1,27 @@
 import { useState } from 'react';
+import { CircularProgress } from '@chakra-ui/react';
 import {
   FormWrapper,
   StyledForm,
   StyledButton,
   StyledInput,
-} from './StyledComponents/Form.styled';
+} from './Form.styled';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { selectContacts,selectIsLoading } from 'redux/selectors';
-import { addContact } from 'redux/operations';
-import { ColorRing } from 'react-loader-spinner';
+import { addContact } from 'redux/contacts/operations';
+import { selectContacts, selectIsLoading } from 'redux/contacts/selectors';
 
-function ContactForm() {
+function FormContacts() {
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
 
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
 
-  const handleAddContact = (name, phone) => {
-  const newContact = { name: name.trim(), phone: phone.trim() };
-  dispatch(addContact(newContact));
+  const handleAddContact = (name, number) => {
+    const newContact = { name: name.trim(), number: number.trim() };
+    dispatch(addContact(newContact));
   };
 
   const handleChange = evt => {
@@ -30,8 +30,8 @@ function ContactForm() {
       case 'name':
         setName(value);
         break;
-      case 'phone':
-        setPhone(value);
+      case 'number':
+        setNumber(value);
         break;
       default:
         return;
@@ -48,13 +48,13 @@ function ContactForm() {
       reset();
       return;
     }
-    handleAddContact(name, phone);
+    handleAddContact(name, number);
     reset();
   };
 
   const reset = () => {
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
@@ -72,28 +72,30 @@ function ContactForm() {
             required
           />
         </label>
+
         <label>
           Number
           <StyledInput
-            value={phone}
+            value={number}
             onChange={handleChange}
             type="tel"
-            name="phone"
-            pattern="^[+]?[0-9\\.\\-\\s]{1,15}$"
+            name="number"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
         </label>
 
-        <StyledButton type="submit" disabled={isLoading }> {isLoading && contacts.length !== 0  ? <ColorRing
-  visible={true}
-  height="20"
-  width="20"
-
-/> : 'Add contact'}</StyledButton>
+        <StyledButton type="submit" disabled={isLoading}>
+          {' '}
+          {isLoading && contacts.length !== 0 ? (
+            <CircularProgress isIndeterminate color="green.300" />
+          ) : (
+            'Add contact'
+          )}
+        </StyledButton>
       </StyledForm>
     </FormWrapper>
   );
 }
 
-export default ContactForm;
+export default FormContacts;

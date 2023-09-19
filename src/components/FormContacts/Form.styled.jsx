@@ -1,5 +1,4 @@
 import { styled } from 'styled-components';
-
 const FormWrapper = styled.div`
   max-width: 500px;
   margin: 0 auto;
@@ -23,7 +22,7 @@ const StyledInput = styled.input`
 const StyledButton = styled.button`
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #007bff !important;
   color: #fff;
   border: none;
   cursor: pointer;

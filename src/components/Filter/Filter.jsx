@@ -1,8 +1,8 @@
-import { setFilter } from 'redux/filterSlice';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { selectFilter } from 'redux/selectors';
-import { StyledInput, FormWrapper } from './StyledComponents/Form.styled';
+import { StyledInput, FormWrapper } from '../FormContacts/Form.styled';
+import { selectFilter } from 'redux/contacts/selectors';
+import { setFilter } from 'redux/contacts/filterSlice';
 function Filter() {
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();

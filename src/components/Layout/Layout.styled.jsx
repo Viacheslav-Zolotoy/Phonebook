@@ -10,12 +10,11 @@ const Container = styled.div`
   position: relative;
   background: #ffffff82;
 
-  /*The background extends to the outside edge of the padding. No background is drawn beneath the border.*/
   background-clip: padding-box;
 
   border: solid 8px transparent;
   border-radius: 0.8rem;
-justify-content: center;
+  justify-content: center;
   &:before {
     content: '';
     position: absolute;
@@ -24,8 +23,8 @@ justify-content: center;
     bottom: 0;
     left: 0;
     z-index: -1;
-    margin: -8px; /* same as border width */
-    border-radius: inherit; /* inherit container box's radius */
+    margin: -8px;
+    border-radius: inherit;
     background: linear-gradient(to left, turquoise, greenyellow);
   }
 `;
@@ -33,6 +32,8 @@ justify-content: center;
 const Title = styled.h1`
   color: #333;
   text-align: center;
+  font-size: 28px;
+  font-weight: 600;
 `;
 const SecondaryTitle = styled.h2`
   color: #333;
