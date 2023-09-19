@@ -20,6 +20,9 @@ export const ModalWindow = styled.div`
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   overflow-y: auto;
   border-radius: 10px;
+  position: absolute;
+  top: 20%;
+  left: 40%;
 `;
 
 export const ModalImg = styled.img`
