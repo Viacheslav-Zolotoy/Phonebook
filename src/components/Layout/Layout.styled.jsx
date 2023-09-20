@@ -1,42 +1,28 @@
 import { styled } from 'styled-components';
 
 const Container = styled.div`
-  max-width: 500px;
-  margin: 30px auto 0;
-  padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  position: relative;
-  background: #ffffff82;
+  max-width: 1200px;
 
-  background-clip: padding-box;
+  padding-left: 15px;
+  padding-right: 15px;
 
-  border: solid 8px transparent;
-  border-radius: 0.8rem;
-  justify-content: center;
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    margin: -8px;
-    border-radius: inherit;
-    background: linear-gradient(to left, turquoise, greenyellow);
-  }
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const Title = styled.h1`
   color: #333;
   text-align: center;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 600;
 `;
 const SecondaryTitle = styled.h2`
   color: #333;
   text-align: center;
+  font-weight: 500;
+
+  font-size: 22px;
+  line-height: 1.11;
+  text-transform: capitalize;
 `;
 export { Container, Title, SecondaryTitle };
