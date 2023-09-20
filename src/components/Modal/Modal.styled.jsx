@@ -21,8 +21,6 @@ export const ModalWindow = styled.div`
   overflow-y: auto;
   border-radius: 10px;
   position: absolute;
-  top: 20%;
-  left: 40%;
 `;
 
 export const ModalImg = styled.img`
